@@ -13,35 +13,30 @@ const Header = ({ onNavigate, currentPage }) => {
 
     const navItems = [
         {
-            label: 'ORIGIN',
+            label: 'Scope',
+            page: 'scope',
             items: [
                 { label: 'Essence', page: 'essence' },
                 { label: 'Crew', page: 'crew' },
-                { label: 'Chronos', page: 'chronos' },
-            ]
-        },
-        {
-            label: 'Scope',
-            items: [
-                { label: 'Scope', page: 'scope' },
                 { label: 'Blueprint', page: 'blueprint' },
                 { label: 'Footprint', page: 'footprint' },
             ]
         },
         {
             label: 'Synergy',
+            page: 'synergy',
             items: [
-                { label: 'Synergy', page: 'synergy' },
                 { label: 'Alliescape', page: 'alliescape' },
+                { label: 'Impact Tales', page: 'impact tales' },
                 { label: 'CoCreate', page: 'cocreate' },
+                { label: 'Echoes', page: 'echoes' },
             ]
         },
         {
             label: 'Momentum',
+            page: 'momentum',
             items: [
-                { label: 'Momentum', page: 'momentum' },
-                { label: 'Impact Tales', page: 'impact tales' },
-                { label: 'Echoes', page: 'echoes' },
+                { label: 'Chronos', page: 'chronos' },
                 { label: 'Spotlight', page: 'spotlight' },
                 { label: 'Wavelength', page: 'wavelength' },
                 { label: 'PulseStream', page: 'pulsestream' },
@@ -60,30 +55,45 @@ const Header = ({ onNavigate, currentPage }) => {
         <header className="bg-[#0F172A] text-white sticky top-0 z-50 shadow-lg">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
-                    {/* Logo */}
-                    <div
-                        className="flex items-center gap-2 cursor-pointer group"
-                        onClick={() => onNavigate('home')}
-                    >
-                        <div className="w-8 h-8 bg-gold rounded-full flex items-center justify-center">
-                            <span className="text-[#0F172A] font-black text-sm">E</span>
+                    {/* Logo Area */}
+                    <div className="flex items-center gap-6">
+                        {/* ExpandME Logo */}
+                        <div
+                            className="flex items-center gap-2 cursor-pointer group"
+                            onClick={() => onNavigate('home')}
+                        >
+                            <div className="w-8 h-8 bg-gold rounded-full flex items-center justify-center">
+                                <span className="text-[#0F172A] font-black text-sm">E</span>
+                            </div>
+                            <div className="flex flex-col">
+                                <span className="text-gold font-bold text-lg tracking-tight group-hover:text-gold-hover transition-colors">
+                                    ExpandME
+                                </span>
+                                <span className="text-[8px] text-gray-400 uppercase tracking-widest -mt-1">
+                                    SCOTLAND TO MIDDLE EAST
+                                </span>
+                            </div>
                         </div>
-                        <div className="flex flex-col">
-                            <span className="text-gold font-bold text-lg tracking-tight group-hover:text-gold-hover transition-colors">
-                                ExpandME
-                            </span>
-                            <span className="text-[8px] text-gray-400 uppercase tracking-widest -mt-1">
-                                SCOTLAND TO MIDDLE EAST
-                            </span>
-                        </div>
+
+                        {/* ORIGIN Button (Separate from Logo) */}
+                        <button
+                            onClick={() => onNavigate('home')}
+                            className={`hidden lg:block bg-gold text-[#0F172A] px-4 py-1.5 rounded-md font-bold text-xs uppercase tracking-wider hover:bg-gold-hover transition-all
+                                ${currentPage === 'home' ? 'ring-2 ring-white ring-offset-1 ring-offset-[#0F172A]' : ''}`}
+                        >
+                            ORIGIN
+                        </button>
                     </div>
 
                     {/* Desktop Navigation */}
                     <nav className="hidden lg:flex items-center gap-1">
                         {navItems.map((item, index) => (
                             <div key={index} className="relative group">
-                                <button className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-md transition-all flex items-center gap-1
-                                    ${index === 0 ? 'bg-gold text-[#0F172A] hover:bg-gold-hover' : 'text-gray-300 hover:text-white hover:bg-white/10'}`}>
+                                <button
+                                    onClick={() => onNavigate(item.page)}
+                                    className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-md transition-all flex items-center gap-1
+                                    ${currentPage === item.page ? 'text-gold bg-white/5' : 'text-gray-300 hover:text-white hover:bg-white/10'}`}
+                                >
                                     {item.label}
                                     <svg className="w-3 h-3 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -96,7 +106,10 @@ const Header = ({ onNavigate, currentPage }) => {
                                         {item.items.map((subItem, subIndex) => (
                                             <button
                                                 key={subIndex}
-                                                onClick={() => onNavigate(subItem.page)}
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    onNavigate(subItem.page);
+                                                }}
                                                 className={`w-full text-left px-4 py-2 text-xs font-medium transition-colors
                                                     ${currentPage === subItem.page ? 'text-gold bg-white/5' : 'text-gray-300 hover:text-white hover:bg-white/5'}`}
                                             >
@@ -154,6 +167,17 @@ const Header = ({ onNavigate, currentPage }) => {
             {isMenuOpen && (
                 <div className="lg:hidden bg-[#1E293B] border-t border-white/10">
                     <div className="px-4 py-4 space-y-4">
+                        {/* Mobile ORIGIN */}
+                        <button
+                            onClick={() => {
+                                onNavigate('home');
+                                setIsMenuOpen(false);
+                            }}
+                            className="w-full bg-gold text-[#0F172A] py-3 rounded-md font-bold text-xs uppercase tracking-wider hover:bg-gold-hover transition-all"
+                        >
+                            ORIGIN
+                        </button>
+
                         {/* Mobile Theme Switcher */}
                         <div className="flex items-center gap-3 pb-4 border-b border-white/10">
                             <span className="text-gray-400 text-xs uppercase tracking-wider">Theme:</span>
@@ -174,8 +198,16 @@ const Header = ({ onNavigate, currentPage }) => {
                         {/* Mobile Nav Items */}
                         {navItems.map((item, index) => (
                             <div key={index} className="space-y-2">
-                                <p className="text-gold text-xs font-bold uppercase tracking-wider">{item.label}</p>
-                                <div className="space-y-1 pl-4">
+                                <button
+                                    onClick={() => {
+                                        onNavigate(item.page);
+                                        setIsMenuOpen(false);
+                                    }}
+                                    className="text-gold text-xs font-bold uppercase tracking-wider w-full text-left"
+                                >
+                                    {item.label}
+                                </button>
+                                <div className="space-y-1 pl-4 border-l border-white/10">
                                     {item.items.map((subItem, subIndex) => (
                                         <button
                                             key={subIndex}
@@ -199,7 +231,7 @@ const Header = ({ onNavigate, currentPage }) => {
                                 onNavigate('expansion request');
                                 setIsMenuOpen(false);
                             }}
-                            className="w-full bg-gold text-[#0F172A] py-3 rounded-md font-bold text-xs uppercase tracking-wider hover:bg-gold-hover transition-all"
+                            className="w-full bg-transparent border border-gold text-gold py-3 rounded-md font-bold text-xs uppercase tracking-wider hover:bg-gold hover:text-[#0F172A] transition-all"
                         >
                             Expansion Request
                         </button>
