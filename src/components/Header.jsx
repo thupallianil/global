@@ -1,100 +1,211 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Header = ({ onNavigate, currentPage }) => {
-    const navItems = [
-        {
-            name: 'Scope',
-            id: 'scope',
-            subs: ['Essence', 'Crew', 'Blueprint', 'Footprint']
-        },
-        {
-            name: 'Synergy',
-            id: 'synergy',
-            subs: ['Alliescape', 'Impact Tales', 'CoCreate', 'Echoes']
-        },
-        {
-            name: 'Momentum',
-            id: 'momentum',
-            subs: ['Chronos', 'Spotlight', 'Wavelength', 'PulseStream']
-        }
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [currentTheme, setCurrentTheme] = useState('gold');
+
+    const themes = [
+        { name: 'gold', color: '#D4AF37', label: 'Luxe Gold' },
+        { name: 'midnight', color: '#1E40AF', label: 'Midnight Blue' },
+        { name: 'emerald', color: '#059669', label: 'Emerald' },
+        { name: 'ruby', color: '#DC2626', label: 'Ruby Red' },
     ];
 
-    const isSubActive = (id, subs) => {
-        return currentPage === id || subs.some(sub => sub.toLowerCase() === currentPage);
+    const navItems = [
+        {
+            label: 'ORIGIN',
+            items: [
+                { label: 'Essence', page: 'essence' },
+                { label: 'Crew', page: 'crew' },
+                { label: 'Chronos', page: 'chronos' },
+            ]
+        },
+        {
+            label: 'Scope',
+            items: [
+                { label: 'Scope', page: 'scope' },
+                { label: 'Blueprint', page: 'blueprint' },
+                { label: 'Footprint', page: 'footprint' },
+            ]
+        },
+        {
+            label: 'Synergy',
+            items: [
+                { label: 'Synergy', page: 'synergy' },
+                { label: 'Alliescape', page: 'alliescape' },
+                { label: 'CoCreate', page: 'cocreate' },
+            ]
+        },
+        {
+            label: 'Momentum',
+            items: [
+                { label: 'Momentum', page: 'momentum' },
+                { label: 'Impact Tales', page: 'impact tales' },
+                { label: 'Echoes', page: 'echoes' },
+                { label: 'Spotlight', page: 'spotlight' },
+                { label: 'Wavelength', page: 'wavelength' },
+                { label: 'PulseStream', page: 'pulsestream' },
+            ]
+        },
+    ];
+
+    const handleThemeChange = (themeName) => {
+        setCurrentTheme(themeName);
+        document.documentElement.setAttribute('data-theme', themeName);
     };
 
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
     return (
-        <header className="bg-[#0F172A] py-3 px-4 md:px-10 flex items-center justify-between sticky top-0 z-50 border-b border-gray-800">
-            <div className="flex items-center gap-2 cursor-pointer" onClick={() => onNavigate('home')}>
-                {/* Logo Section */}
-                <div className="flex items-center gap-1">
-                    <div className="relative w-8 h-8 flex items-center justify-center">
-                        <div className="absolute inset-0 bg-gold rotate-45 rounded-sm"></div>
-                        <svg className="relative w-5 h-5 text-[#0F172A] -rotate-12" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M7 11h2v10H7zm4-6h2v16h-2zm4 9h2v7h-2zm4-12h2v19h-2z" />
+        <header className="bg-[#0F172A] text-white sticky top-0 z-50 shadow-lg">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex items-center justify-between h-16">
+                    {/* Logo */}
+                    <div
+                        className="flex items-center gap-2 cursor-pointer group"
+                        onClick={() => onNavigate('home')}
+                    >
+                        <div className="w-8 h-8 bg-gold rounded-full flex items-center justify-center">
+                            <span className="text-[#0F172A] font-black text-sm">E</span>
+                        </div>
+                        <div className="flex flex-col">
+                            <span className="text-gold font-bold text-lg tracking-tight group-hover:text-gold-hover transition-colors">
+                                ExpandME
+                            </span>
+                            <span className="text-[8px] text-gray-400 uppercase tracking-widest -mt-1">
+                                SCOTLAND TO MIDDLE EAST
+                            </span>
+                        </div>
+                    </div>
+
+                    {/* Desktop Navigation */}
+                    <nav className="hidden lg:flex items-center gap-1">
+                        {navItems.map((item, index) => (
+                            <div key={index} className="relative group">
+                                <button className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-md transition-all flex items-center gap-1
+                                    ${index === 0 ? 'bg-gold text-[#0F172A] hover:bg-gold-hover' : 'text-gray-300 hover:text-white hover:bg-white/10'}`}>
+                                    {item.label}
+                                    <svg className="w-3 h-3 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </button>
+
+                                {/* Dropdown */}
+                                <div className="absolute top-full left-0 mt-1 w-48 bg-[#1E293B] rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-white/10">
+                                    <div className="py-2">
+                                        {item.items.map((subItem, subIndex) => (
+                                            <button
+                                                key={subIndex}
+                                                onClick={() => onNavigate(subItem.page)}
+                                                className={`w-full text-left px-4 py-2 text-xs font-medium transition-colors
+                                                    ${currentPage === subItem.page ? 'text-gold bg-white/5' : 'text-gray-300 hover:text-white hover:bg-white/5'}`}
+                                            >
+                                                {subItem.label}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </nav>
+
+                    {/* Right Side: Theme Switcher + CTA */}
+                    <div className="hidden lg:flex items-center gap-4">
+                        {/* Theme Switcher */}
+                        <div className="flex items-center gap-2 px-3 py-1.5 bg-white/5 rounded-full border border-white/10">
+                            {themes.map((theme) => (
+                                <button
+                                    key={theme.name}
+                                    onClick={() => handleThemeChange(theme.name)}
+                                    className={`w-5 h-5 rounded-full transition-all hover:scale-110 ${currentTheme === theme.name ? 'ring-2 ring-white ring-offset-1 ring-offset-[#0F172A]' : ''
+                                        }`}
+                                    style={{ backgroundColor: theme.color }}
+                                    title={theme.label}
+                                />
+                            ))}
+                        </div>
+
+                        {/* CTA Button */}
+                        <button
+                            onClick={() => onNavigate('expansion request')}
+                            className="bg-transparent border-2 border-gold text-gold px-5 py-2 rounded-md font-bold text-xs uppercase tracking-wider hover:bg-gold hover:text-[#0F172A] transition-all"
+                        >
+                            Expansion Request
+                        </button>
+                    </div>
+
+                    {/* Mobile Menu Button */}
+                    <button
+                        onClick={toggleMenu}
+                        className="lg:hidden p-2 text-white hover:bg-white/10 rounded-md transition-colors"
+                    >
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            {isMenuOpen ? (
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            ) : (
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                            )}
                         </svg>
-                    </div>
-                    <div className="flex flex-col leading-none">
-                        <span className="text-white text-xl font-bold tracking-tight">Expand<span className="text-gold">ME</span></span>
-                        <span className="text-[8px] text-gray-400 uppercase tracking-widest">Softland to Middle East</span>
-                    </div>
+                    </button>
                 </div>
             </div>
 
-            <nav className="hidden lg:flex items-center gap-6">
-                <button
-                    className={`px-4 py-1.5 rounded-md font-bold text-xs uppercase transition-all ${currentPage === 'home' ? 'bg-gold text-primary' : 'text-gray-400 hover:text-white'}`}
-                    onClick={() => onNavigate('home')}
-                >
-                    Origin
-                </button>
-
-                {navItems.map((item) => (
-                    <div key={item.id} className="relative group flex items-center h-full">
-                        <div
-                            onClick={() => onNavigate(item.id)}
-                            className={`flex items-center gap-1 cursor-pointer transition-all text-sm font-bold px-4 py-2 rounded-lg ${isSubActive(item.id, item.subs) ? 'bg-orange-500 text-white' : 'text-white hover:bg-orange-500/10'}`}
-                        >
-                            <span>{item.name}</span>
-                            <svg className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
-                            </svg>
+            {/* Mobile Menu */}
+            {isMenuOpen && (
+                <div className="lg:hidden bg-[#1E293B] border-t border-white/10">
+                    <div className="px-4 py-4 space-y-4">
+                        {/* Mobile Theme Switcher */}
+                        <div className="flex items-center gap-3 pb-4 border-b border-white/10">
+                            <span className="text-gray-400 text-xs uppercase tracking-wider">Theme:</span>
+                            <div className="flex gap-2">
+                                {themes.map((theme) => (
+                                    <button
+                                        key={theme.name}
+                                        onClick={() => handleThemeChange(theme.name)}
+                                        className={`w-6 h-6 rounded-full transition-all ${currentTheme === theme.name ? 'ring-2 ring-white' : ''
+                                            }`}
+                                        style={{ backgroundColor: theme.color }}
+                                        title={theme.label}
+                                    />
+                                ))}
+                            </div>
                         </div>
 
-                        {/* Dropdown Menu */}
-                        <div className="absolute top-[calc(100%+5px)] left-0 w-48 bg-white border border-gray-100 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2 transform group-hover:translate-y-0 translate-y-2">
-                            {item.subs.map((subItem) => (
-                                <div
-                                    key={subItem}
-                                    onClick={(e) => {
-                                        e.stopPropagation();
-                                        onNavigate(subItem.toLowerCase());
-                                    }}
-                                    className="px-6 py-3 text-[13px] font-bold text-gray-600 hover:text-orange-500 hover:bg-orange-50 cursor-pointer transition-all"
-                                >
-                                    {subItem}
+                        {/* Mobile Nav Items */}
+                        {navItems.map((item, index) => (
+                            <div key={index} className="space-y-2">
+                                <p className="text-gold text-xs font-bold uppercase tracking-wider">{item.label}</p>
+                                <div className="space-y-1 pl-4">
+                                    {item.items.map((subItem, subIndex) => (
+                                        <button
+                                            key={subIndex}
+                                            onClick={() => {
+                                                onNavigate(subItem.page);
+                                                setIsMenuOpen(false);
+                                            }}
+                                            className={`block w-full text-left py-2 text-sm transition-colors
+                                                ${currentPage === subItem.page ? 'text-gold' : 'text-gray-300 hover:text-white'}`}
+                                        >
+                                            {subItem.label}
+                                        </button>
+                                    ))}
                                 </div>
-                            ))}
-                        </div>
+                            </div>
+                        ))}
+
+                        {/* Mobile CTA */}
+                        <button
+                            onClick={() => {
+                                onNavigate('expansion request');
+                                setIsMenuOpen(false);
+                            }}
+                            className="w-full bg-gold text-[#0F172A] py-3 rounded-md font-bold text-xs uppercase tracking-wider hover:bg-gold-hover transition-all"
+                        >
+                            Expansion Request
+                        </button>
                     </div>
-                ))}
-            </nav>
-
-            <div>
-                <button
-                    onClick={() => onNavigate('expansion request')}
-                    className="bg-gold text-primary px-5 py-2 rounded-md font-bold text-xs uppercase hover:bg-gold-hover transition-colors"
-                >
-                    Expansion Request
-                </button>
-            </div>
-
-            {/* Mobile Toggle */}
-            <div className="lg:hidden text-white">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </div>
+                </div>
+            )}
         </header>
     );
 };

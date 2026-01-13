@@ -202,7 +202,7 @@ const Hero = () => {
                                         </div>
                                         <div className="flex flex-wrap gap-2">
                                             {v.tags.map((tag, idx) => (
-                                                <span key={idx} className="bg-[#FCF8F1] text-[#D4A017] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border border-gold/10">{tag}</span>
+                                                <span key={idx} className="bg-gray-50 text-gold px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border border-gold/10">{tag}</span>
                                             ))}
                                         </div>
                                     </div>
@@ -280,14 +280,14 @@ const Hero = () => {
                             <div className="absolute inset-0 z-30 bg-gradient-to-tr from-blue-500/20 via-transparent to-white/10 rounded-full"></div>
                             <div className="absolute top-[28%] left-[32%] flex flex-col items-center z-50 animate-bounce">
                                 <div className="bg-gold text-[#0F172A] text-[8px] font-bold px-1 rounded-sm mb-1 leading-none">HAMBURG</div>
-                                <div className="w-2 h-2 bg-gold rounded-full shadow-[0_0_10px_#FFC107]"></div>
+                                <div className="w-2 h-2 bg-gold rounded-full shadow-[0_0_10px_var(--accent)]"></div>
                             </div>
                             <div className="absolute top-[45%] left-[72%] w-3 h-3 bg-gold rounded-full z-40 animate-ping"></div>
                             <div className="absolute top-[45%] left-[72%] w-2 h-2 bg-gold rounded-full z-50"></div>
                         </div>
                         <div className="absolute inset-0 z-20 opacity-30 pointer-events-none">
                             <svg className="w-full h-full" viewBox="0 0 100 100">
-                                <path d="M32 28 Q 50 20 72 45" stroke="rgba(255,193,7,0.5)" fill="none" strokeWidth="0.5" strokeDasharray="5,5" />
+                                <path d="M32 28 Q 50 20 72 45" className="stroke-gold/50" fill="none" strokeWidth="0.5" strokeDasharray="5,5" />
                             </svg>
                         </div>
                     </div>

@@ -1,18 +1,83 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0F172A;
-  --color-gold: #FFC107;
-  --color-gold-hover: #E5A100;
+    --color-primary: #0F172A;
+    --color-gold: rgb(var(--accent-rgb));
+    --color-gold-hover: rgb(var(--accent-hover-rgb));
+    --color-accent: rgb(var(--accent-rgb));
+    --color-accent-hover: rgb(var(--accent-hover-rgb));
 }
 
 :root {
-  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+    --accent-rgb: 212 175 55;
+    --accent-hover-rgb: 201 162 39;
+    --accent-light: #D4AF3720;
+}
+
+/* Theme: Luxe Gold (Default) */
+[data-theme="gold"],
+:root {
+    --accent-rgb: 212 175 55;
+    --accent-hover-rgb: 201 162 39;
+    --accent-light: #D4AF3720;
+}
+
+/* Theme: Midnight Blue */
+[data-theme="midnight"] {
+    --accent-rgb: 30 64 175;
+    --accent-hover-rgb: 30 58 138;
+    --accent-light: #3B82F620;
+}
+
+/* Theme: Emerald */
+[data-theme="emerald"] {
+    --accent-rgb: 5 150 105;
+    --accent-hover-rgb: 4 120 87;
+    --accent-light: #10B98120;
+}
+
+/* Theme: Ruby Red */
+[data-theme="ruby"] {
+    --accent-rgb: 220 38 38;
+    --accent-hover-rgb: 185 28 28;
+    --accent-light: #EF444420;
 }
 
 body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  @apply bg-primary text-white;
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: #0F172A;
+    color: white;
+}
+
+/* Accent color utilities that respond to theme */
+.text-accent {
+    color: rgb(var(--accent-rgb)) !important;
+}
+
+.bg-accent {
+    background-color: rgb(var(--accent-rgb)) !important;
+}
+
+.bg-accent-hover:hover {
+    background-color: rgb(var(--accent-hover-rgb)) !important;
+}
+
+.border-accent {
+    border-color: rgb(var(--accent-rgb)) !important;
+}
+
+.shadow-accent {
+    box-shadow: 0 10px 15px -3px var(--accent-light) !important;
+}
+
+.decoration-accent {
+    text-decoration-color: rgb(var(--accent-rgb)) !important;
+}
+
+/* Ring utilities */
+.ring-accent {
+    --tw-ring-color: rgb(var(--accent-rgb)) !important;
 }
