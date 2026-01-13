@@ -63,10 +63,10 @@ const ImpactTales = () => {
                     </div>
 
                     {/* Card 2 */}
-                    <div className="bg-bg-base border border-black/5 rounded-xl shadow-sm p-8 hover:shadow-xl transition-all group hover:-translate-y-1">
+                    <div className="bg-white border border-gray-100 rounded-xl shadow-sm p-8 hover:shadow-xl transition-all group hover:-translate-y-1">
                         <div className="flex items-center gap-4 mb-4">
-                            <div className="text-accent text-2xl font-black transform group-hover:rotate-12 transition-transform">📦</div>
-                            <h3 className="font-bold text-lg uppercase tracking-tight text-text-main">
+                            <div className="text-gold text-2xl font-black transform group-hover:rotate-12 transition-transform">📦</div>
+                            <h3 className="font-bold text-lg uppercase tracking-tight text-[#0F172A]">
                                 E-commerce Giant: Optimizing Supply Chain via RAKEZ
                             </h3>
                         </div>
@@ -80,10 +80,10 @@ const ImpactTales = () => {
                     </div>
 
                     {/* Card 3 */}
-                    <div className="bg-bg-base border border-black/5 rounded-xl shadow-sm p-8 hover:shadow-xl transition-all group hover:-translate-y-1">
+                    <div className="bg-white border border-gray-100 rounded-xl shadow-sm p-8 hover:shadow-xl transition-all group hover:-translate-y-1">
                         <div className="flex items-center gap-4 mb-4">
-                            <div className="text-accent text-2xl font-black transform group-hover:rotate-12 transition-transform">💰</div>
-                            <h3 className="font-bold text-lg uppercase tracking-tight text-text-main">
+                            <div className="text-gold text-2xl font-black transform group-hover:rotate-12 transition-transform">💰</div>
+                            <h3 className="font-bold text-lg uppercase tracking-tight text-[#0F172A]">
                                 FinTech Firm: Compliance & Capital in ADGM
                             </h3>
                         </div>
