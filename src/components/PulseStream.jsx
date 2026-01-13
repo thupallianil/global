@@ -1,12 +1,136 @@
-import React from 'react';
+import React from "react";
+
+const kpis = [
+    {
+        value: "99.8%",
+        title: "Global Compliance Rate",
+        desc: "Across all supported jurisdictions and expansions."
+    },
+    {
+        value: "5.1 Days",
+        title: "Average Setup Speed",
+        desc: "From documentation to operational readiness."
+    },
+    {
+        value: "100%",
+        title: "Zero-Tax Structuring",
+        desc: "For qualifying international expansion models."
+    },
+    {
+        value: "15+",
+        title: "Active Expansion Projects",
+        desc: "Currently in execution across multiple regions."
+    }
+];
+
+const activities = [
+    "UAE Free Zone company incorporation completed for FinTech client in ADGM.",
+    "Bank account successfully activated for Indian Pharma firm in Dubai.",
+    "VAT registration completed for E-commerce brand in RAKEZ.",
+    "Cross-border fund structure launched for renewable energy startup.",
+    "Logistics entity onboarded under Dubai South Free Zone."
+];
 
 const PulseStream = () => {
     return (
-        <div className="flex flex-col items-center justify-center min-h-[60vh] bg-white text-[#0F172A] p-20">
-            <h1 className="text-4xl font-bold mb-4 italic text-orange-500">PulseStream</h1>
-            <p className="text-gray-500 text-lg max-w-2xl text-center font-medium">
-                The **PulseStream** of global business. Real-time updates and flow of international scale-up.
-            </p>
+        <div className="bg-bg-base text-text-main transition-colors duration-500 min-h-screen">
+
+            {/* Hero Section */}
+            <section className="bg-primary py-20 text-center text-white rounded-b-xl transition-colors duration-500">
+                <div className="max-w-4xl mx-auto px-6">
+                    <div className="text-3xl mb-4">⚡</div>
+                    <h1 className="text-4xl font-bold mb-4 uppercase tracking-tight">
+                        <span className="text-accent">PulseStream</span> | Operational Metrics
+                    </h1>
+                    <p className="text-gray-200">
+                        Transparency in motion. See the real-time operational metrics and
+                        activity that drive our zero-risk, high-speed expansion process.
+                    </p>
+                </div>
+            </section>
+
+            {/* KPI Section */}
+            <section className="py-20">
+                <h2 className="text-center text-2xl font-semibold mb-12 uppercase tracking-wide">
+                    Key Performance <span className="text-accent">Indicators</span> (KPIs)
+                </h2>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto px-6">
+                    {kpis.map((kpi, index) => (
+                        <div
+                            key={index}
+                            className="border border-black/5 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition bg-bg-alt"
+                        >
+                            <h3 className="text-3xl font-bold text-accent mb-2">
+                                {kpi.value}
+                            </h3>
+                            <p className="font-bold text-text-main mb-1">{kpi.title}</p>
+                            <p className="text-sm text-text-muted">{kpi.desc}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            {/* Activity + Global Reach */}
+            <section className="py-20 bg-bg-alt transition-colors duration-500">
+                <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+                    {/* Activity Feed */}
+                    <div className="lg:col-span-2">
+                        <h3 className="text-xl font-bold mb-6 uppercase tracking-wide">
+                            Recent <span className="text-accent">Activity Feed</span>
+                        </h3>
+
+                        <div className="space-y-4">
+                            {activities.map((item, index) => (
+                                <div
+                                    key={index}
+                                    className="border border-black/5 rounded-lg p-4 bg-bg-base text-sm text-text-muted flex items-start gap-3 shadow-sm"
+                                >
+                                    <span className="text-accent mt-1">✔</span>
+                                    {item}
+                                </div>
+                            ))}
+                        </div>
+
+                        <button className="mt-6 text-sm text-accent font-black uppercase tracking-widest hover:text-accent-hover transition-colors">
+                            View Full Activity →
+                        </button>
+                    </div>
+
+                    {/* Global Reach */}
+                    <div>
+                        <h3 className="text-xl font-bold mb-6 uppercase tracking-wide">
+                            Our <span className="text-accent">Global Reach</span>
+                        </h3>
+
+                        <div className="border border-black/5 rounded-xl p-6 bg-bg-base shadow-sm text-center">
+                            <div className="text-3xl mb-4">🌍</div>
+                            <p className="text-sm text-text-muted leading-relaxed">
+                                Operational presence across key global expansion hubs including
+                                UAE, UK, EU, and Southeast Asia — enabling founders to scale
+                                with confidence and compliance.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            {/* Bottom CTA */}
+            <section className="bg-primary py-20 text-center text-white transition-colors duration-500">
+                <h2 className="text-2xl font-bold mb-4 uppercase tracking-tight">
+                    Make Your Business the <span className="text-accent">Next Data Point</span>
+                </h2>
+                <p className="text-gray-200 mb-6 max-w-xl mx-auto leading-relaxed">
+                    Ready to enter the PulseStream? Let’s map your expansion journey with
+                    speed, transparency, and compliance.
+                </p>
+                <button className="bg-accent hover:bg-accent-hover px-8 py-3 rounded-lg font-bold text-primary transition-all transform hover:scale-105 shadow-xl shadow-accent/10 uppercase text-sm">
+                    Start My Expansion
+                </button>
+            </section>
+
         </div>
     );
 };
