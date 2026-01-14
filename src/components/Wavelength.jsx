@@ -32,23 +32,25 @@ const Wavelength = () => {
     <div className="bg-white text-[#0F172A]">
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#0B1E33] to-[#122C47] py-20 text-center text-white rounded-b-xl">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-3xl mb-4">〰️</div>
-          <h1 className="text-4xl font-bold mb-4">
-            On the <span className="text-orange-400">Wavelength</span>
-          </h1>
-          <p className="text-gray-300 mb-6">
-            Zero-risk expansion starts with expert knowledge. Stay current with our
-            thought leadership on global compliance, strategy, and market trends.
-          </p>
-          <div className="flex justify-center gap-4 flex-wrap">
-            <button className="bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-lg font-semibold text-white transition">
-              Subscribe to Newsletter
-            </button>
-            <button className="bg-white text-[#0F172A] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
-              View Press Mentions
-            </button>
+      <section className="px-4 pt-4">
+        <div className="bg-gradient-to-r from-[#0B1E33] to-[#122C47] py-20 text-center text-white rounded-3xl border border-[#1E293B]">
+          <div className="max-w-4xl mx-auto px-6">
+            <div className="text-3xl mb-4">〰️</div>
+            <h1 className="text-4xl font-bold mb-4">
+              On the <span className="text-orange-400">Wavelength</span>
+            </h1>
+            <p className="text-gray-300 mb-6">
+              Zero-risk expansion starts with expert knowledge. Stay current with our
+              thought leadership on global compliance, strategy, and market trends.
+            </p>
+            <div className="flex justify-center gap-4 flex-wrap">
+              <button className="bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-lg font-semibold text-white transition">
+                Subscribe to Newsletter
+              </button>
+              <button className="bg-white text-[#0F172A] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+                View Press Mentions
+              </button>
+            </div>
           </div>
         </div>
       </section>

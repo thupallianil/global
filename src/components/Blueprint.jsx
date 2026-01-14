@@ -2,20 +2,22 @@ import React from 'react';
 
 const Blueprint = () => {
     return (
-        <div className="animate-fadeIn">
-            <section className="bg-[#0F172A] py-24 px-6 text-center text-white">
-                <div className="max-w-4xl mx-auto flex flex-col items-center">
-                    <div className="mb-6">
-                        <svg className="w-10 h-10 text-gold" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M13 10V3L4 14H11V21L20 10H13Z" />
-                        </svg>
+        <div className="animate-fadeIn bg-white">
+            <section className="px-4 pt-4">
+                <div className="bg-[#0F172A] py-24 px-6 text-center text-white rounded-3xl border border-[#1E293B]">
+                    <div className="max-w-4xl mx-auto flex flex-col items-center">
+                        <div className="mb-6">
+                            <svg className="w-10 h-10 text-gold" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13 10V3L4 14H11V21L20 10H13Z" />
+                            </svg>
+                        </div>
+                        <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+                            The ExpandME <span className="text-gold">Blueprint</span>
+                        </h1>
+                        <p className="text-gray-400 text-lg mb-10 max-w-3xl leading-relaxed">
+                            Our systematic approach is built on three pillars: <span className="text-white font-bold">Vision</span>, <span className="text-white font-bold">Strategy</span>, and <span className="text-white font-bold">Execution</span>.
+                        </p>
                     </div>
-                    <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
-                        The ExpandME <span className="text-gold">Blueprint</span>
-                    </h1>
-                    <p className="text-gray-400 text-lg mb-10 max-w-3xl leading-relaxed">
-                        Our systematic approach is built on three pillars: <span className="text-white font-bold">Vision</span>, <span className="text-white font-bold">Strategy</span>, and <span className="text-white font-bold">Execution</span>.
-                    </p>
                 </div>
             </section>
 

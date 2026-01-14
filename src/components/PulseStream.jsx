@@ -36,16 +36,18 @@ const PulseStream = () => {
         <div className="bg-white text-[#0F172A] min-h-screen">
 
             {/* Hero Section */}
-            <section className="bg-primary py-20 text-center text-white rounded-b-xl">
-                <div className="max-w-4xl mx-auto px-6">
-                    <div className="text-3xl mb-4">⚡</div>
-                    <h1 className="text-4xl font-bold mb-4 uppercase tracking-tight">
-                        <span className="text-gold">PulseStream</span> | Operational Metrics
-                    </h1>
-                    <p className="text-gray-200">
-                        Transparency in motion. See the real-time operational metrics and
-                        activity that drive our zero-risk, high-speed expansion process.
-                    </p>
+            <section className="px-4 pt-4">
+                <div className="bg-primary py-20 text-center text-white rounded-3xl border border-[#1E293B]">
+                    <div className="max-w-4xl mx-auto px-6">
+                        <div className="text-3xl mb-4">⚡</div>
+                        <h1 className="text-4xl font-bold mb-4 uppercase tracking-tight">
+                            <span className="text-gold">PulseStream</span> | Operational Metrics
+                        </h1>
+                        <p className="text-gray-200">
+                            Transparency in motion. See the real-time operational metrics and
+                            activity that drive our zero-risk, high-speed expansion process.
+                        </p>
+                    </div>
                 </div>
             </section>
 

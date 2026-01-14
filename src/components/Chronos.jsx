@@ -44,19 +44,21 @@ const Chronos = () => {
         <div className="bg-white text-[#0F172A] min-h-screen">
 
             {/* Hero Section */}
-            <section className="bg-primary py-20 text-center text-white">
-                <div className="max-w-4xl mx-auto px-6">
-                    <div className="text-3xl mb-4 text-gold">⏳</div>
-                    <h1 className="text-4xl font-bold mb-4 uppercase tracking-tight">
-                        Our <span className="text-gold">Chronos</span> | A History of Expansion
-                    </h1>
-                    <p className="text-gray-200 mb-6 font-medium leading-relaxed">
-                        Our journey is defined by a commitment to systematic, zero-risk
-                        global expansion. Explore the milestones that built the ExpandMe legacy.
-                    </p>
-                    <button className="bg-gold hover:bg-gold-hover px-8 py-3 rounded-lg font-bold text-primary transition-all shadow-lg shadow-gold/10 uppercase text-sm">
-                        View Our Journey
-                    </button>
+            <section className="px-4 pt-4">
+                <div className="bg-primary py-20 text-center text-white rounded-3xl border border-[#1E293B]">
+                    <div className="max-w-4xl mx-auto px-6">
+                        <div className="text-3xl mb-4 text-gold">⏳</div>
+                        <h1 className="text-4xl font-bold mb-4 uppercase tracking-tight">
+                            Our <span className="text-gold">Chronos</span> | A History of Expansion
+                        </h1>
+                        <p className="text-gray-200 mb-6 font-medium leading-relaxed">
+                            Our journey is defined by a commitment to systematic, zero-risk
+                            global expansion. Explore the milestones that built the ExpandMe legacy.
+                        </p>
+                        <button className="bg-gold hover:bg-gold-hover px-8 py-3 rounded-lg font-bold text-primary transition-all shadow-lg shadow-gold/10 uppercase text-sm">
+                            View Our Journey
+                        </button>
+                    </div>
                 </div>
             </section>
 

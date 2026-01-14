@@ -52,10 +52,12 @@ const Synergy = () => {
     return (
         <div className="flex flex-col bg-white overflow-x-hidden">
             {/* Synergy Hero */}
-            <section className="bg-[#0F172A] py-20 px-6 text-center text-white">
-                <div className="max-w-4xl mx-auto">
-                    <h1 className="text-4xl font-bold mb-4">Our Services — What We Offer</h1>
-                    <p className="text-gray-400 text-lg">Comprehensive solutions for your global business expansion</p>
+            <section className="px-4 pt-4">
+                <div className="bg-[#0F172A] py-20 px-6 text-center text-white rounded-3xl border border-[#1E293B]">
+                    <div className="max-w-4xl mx-auto">
+                        <h1 className="text-4xl font-bold mb-4">Our Services — What We Offer</h1>
+                        <p className="text-gray-400 text-lg">Comprehensive solutions for your global business expansion</p>
+                    </div>
                 </div>
             </section>
 

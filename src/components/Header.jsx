@@ -56,7 +56,7 @@ const Header = ({ onNavigate, currentPage }) => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     {/* Logo Area */}
-                    <div className="flex items-center gap-6">
+                    <div className="flex items-center gap-12">
                         {/* ExpandME Logo */}
                         <div
                             className="flex items-center gap-2 cursor-pointer group"
@@ -141,7 +141,7 @@ const Header = ({ onNavigate, currentPage }) => {
                         {/* CTA Button */}
                         <button
                             onClick={() => onNavigate('expansion request')}
-                            className="bg-transparent border-2 border-gold text-gold px-5 py-2 rounded-md font-bold text-xs uppercase tracking-wider hover:bg-gold hover:text-[#0F172A] transition-all"
+                            className="bg-gold text-[#0F172A] px-5 py-2 rounded-md font-bold text-xs uppercase tracking-wider hover:bg-gold-hover hover:scale-105 transition-all shadow-lg shadow-gold/20"
                         >
                             Expansion Request
                         </button>

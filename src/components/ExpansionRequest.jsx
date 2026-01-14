@@ -4,10 +4,12 @@ const ExpansionRequest = () => {
     return (
         <div className="flex flex-col bg-white overflow-x-hidden">
             {/* Contact Hero */}
-            <section className="bg-[#0F172A] py-20 px-6 text-center text-white">
-                <div className="max-w-4xl mx-auto">
-                    <h1 className="text-4xl font-bold mb-4">Contact Us — Tell Us About Your Project</h1>
-                    <p className="text-gray-400 text-lg">Ready to expand globally? Let's discuss your vision</p>
+            <section className="px-4 pt-4">
+                <div className="bg-[#0F172A] py-20 px-6 text-center text-white rounded-3xl border border-[#1E293B]">
+                    <div className="max-w-4xl mx-auto">
+                        <h1 className="text-4xl font-bold mb-4">Contact Us — Tell Us About Your Project</h1>
+                        <p className="text-gray-400 text-lg">Ready to expand globally? Let's discuss your vision</p>
+                    </div>
                 </div>
             </section>
 

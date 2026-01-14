@@ -5,17 +5,19 @@ const ImpactTales = () => {
         <div className="bg-white text-[#0F172A] min-h-screen">
 
             {/* Hero Section */}
-            <section className="bg-primary py-20 text-center text-white">
-                <h1 className="text-4xl font-bold mb-4 uppercase tracking-tight">
-                    Our <span className="text-gold underline decoration-gold/30 underline-offset-8">Impact Tales</span>
-                </h1>
-                <p className="max-w-3xl mx-auto text-gray-200 mb-6 font-medium leading-relaxed">
-                    Proof is in the performance. See how we’ve powered Indian startups to
-                    achieve rapid, compliant, and profitable international expansion.
-                </p>
-                <button className="bg-gold hover:bg-gold-hover px-6 py-3 rounded-lg font-bold text-primary transition-all shadow-lg shadow-gold/10 uppercase text-sm">
-                    Browse Success Stories
-                </button>
+            <section className="px-4 pt-4">
+                <div className="bg-primary py-20 text-center text-white rounded-3xl border border-[#1E293B]">
+                    <h1 className="text-4xl font-bold mb-4 uppercase tracking-tight">
+                        Our <span className="text-gold underline decoration-gold/30 underline-offset-8">Impact Tales</span>
+                    </h1>
+                    <p className="max-w-3xl mx-auto text-gray-200 mb-6 font-medium leading-relaxed">
+                        Proof is in the performance. See how we've powered Indian startups to
+                        achieve rapid, compliant, and profitable international expansion.
+                    </p>
+                    <button className="bg-gold hover:bg-gold-hover px-6 py-3 rounded-lg font-bold text-primary transition-all shadow-lg shadow-gold/10 uppercase text-sm">
+                        Browse Success Stories
+                    </button>
+                </div>
             </section>
 
             {/* Stats Section */}

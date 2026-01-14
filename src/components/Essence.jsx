@@ -4,35 +4,37 @@ const Essence = () => {
     return (
         <div className="flex flex-col bg-white overflow-x-hidden min-h-screen">
             {/* Essence Hero */}
-            <section className="bg-[#0F172A] py-24 px-6 text-white overflow-hidden relative">
-                <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
-                    <div className="flex-1 z-10">
-                        <p className="text-gold text-xs font-black uppercase tracking-[0.2em] mb-4">Scope & Purpose</p>
-                        <h1 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight">
-                            The <span className="text-gold">Essence</span> of ExpandME
-                        </h1>
-                        <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-8 max-w-xl">
-                            ExpandME is your **fast-track gateway to global markets**, dedicated to turning Indian innovation into internationally recognized brands.
-                        </p>
-                        <p className="text-gray-400 text-xs leading-relaxed mb-10 max-w-lg">
-                            We provide complete end-to-end support for global expansion—including setting up companies with **100% ownership**, enjoying **0% tax advantages**, and ensuring fast company formation within just **48 hours**. Our expert assistance covers legal, strategic, and operational areas, enabling entrepreneurs to confidently enter new markets.
-                        </p>
-                        <button className="bg-gold text-[#0F172A] px-8 py-3 rounded-md font-extrabold text-[10px] uppercase hover:bg-gold-hover transition-all">
-                            Explore Our Blueprint
-                        </button>
-                    </div>
-                    <div className="flex-1 relative z-10">
-                        <div className="bg-white p-6 rounded-2xl shadow-2xl max-w-md mx-auto transform hover:scale-105 transition-transform duration-500">
-                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" alt="The Essence" className="rounded-xl object-cover aspect-square" />
-                            <div className="absolute -bottom-6 -right-6 bg-gold p-4 rounded-xl shadow-xl animate-bounce">
-                                <svg className="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                                </svg>
+            <section className="px-4 pt-4">
+                <div className="bg-[#0F172A] py-24 px-6 text-white overflow-hidden relative rounded-3xl border border-[#1E293B]">
+                    <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
+                        <div className="flex-1 z-10">
+                            <p className="text-gold text-xs font-black uppercase tracking-[0.2em] mb-4">Scope & Purpose</p>
+                            <h1 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight">
+                                The <span className="text-gold">Essence</span> of ExpandME
+                            </h1>
+                            <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-8 max-w-xl">
+                                ExpandME is your **fast-track gateway to global markets**, dedicated to turning Indian innovation into internationally recognized brands.
+                            </p>
+                            <p className="text-gray-400 text-xs leading-relaxed mb-10 max-w-lg">
+                                We provide complete end-to-end support for global expansion—including setting up companies with **100% ownership**, enjoying **0% tax advantages**, and ensuring fast company formation within just **48 hours**. Our expert assistance covers legal, strategic, and operational areas, enabling entrepreneurs to confidently enter new markets.
+                            </p>
+                            <button className="bg-gold text-[#0F172A] px-8 py-3 rounded-md font-extrabold text-[10px] uppercase hover:bg-gold-hover transition-all">
+                                Explore Our Blueprint
+                            </button>
+                        </div>
+                        <div className="flex-1 relative z-10">
+                            <div className="bg-white p-6 rounded-2xl shadow-2xl max-w-md mx-auto transform hover:scale-105 transition-transform duration-500">
+                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" alt="The Essence" className="rounded-xl object-cover aspect-square" />
+                                <div className="absolute -bottom-6 -right-6 bg-gold p-4 rounded-xl shadow-xl animate-bounce">
+                                    <svg className="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div className="absolute top-0 right-0 w-1/3 h-full bg-gold/5 blur-[120px] -z-0"></div>
                 </div>
-                <div className="absolute top-0 right-0 w-1/3 h-full bg-gold/5 blur-[120px] -z-0"></div>
             </section>
 
             {/* Mission & Vision */}

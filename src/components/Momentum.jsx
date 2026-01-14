@@ -57,10 +57,12 @@ const Momentum = () => {
     return (
         <div className="flex flex-col bg-white overflow-x-hidden">
             {/* Blog Hero */}
-            <section className="bg-[#0F172A] py-20 px-6 text-center text-white">
-                <div className="max-w-4xl mx-auto">
-                    <h1 className="text-4xl font-bold mb-4">ExpandME Blog</h1>
-                    <p className="text-gray-400 text-lg">Insights, guides, and success stories to help you expand globally</p>
+            <section className="px-4 pt-4">
+                <div className="bg-[#0F172A] py-20 px-6 text-center text-white rounded-3xl border border-[#1E293B]">
+                    <div className="max-w-4xl mx-auto">
+                        <h1 className="text-4xl font-bold mb-4">ExpandME Blog</h1>
+                        <p className="text-gray-400 text-lg">Insights, guides, and success stories to help you expand globally</p>
+                    </div>
                 </div>
             </section>
 

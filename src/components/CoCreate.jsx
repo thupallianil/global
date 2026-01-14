@@ -5,20 +5,22 @@ const CoCreate = () => {
         <div className="bg-white text-[#0F172A] min-h-screen">
 
             {/* Hero Section */}
-            <section className="bg-primary py-20 text-center text-white">
-                <div className="max-w-4xl mx-auto px-6">
-                    <div className="text-2xl mb-4 text-gold">⚡</div>
-                    <h1 className="text-4xl font-bold mb-4 uppercase tracking-tight">
-                        The Global Strategy <span className="text-gold underline decoration-gold/30 underline-offset-8">Co-creation Lab</span>
-                    </h1>
-                    <p className="text-gray-200 mb-6 font-medium leading-relaxed">
-                        A focused, expert-led workshop that transforms your global
-                        expansion idea into a clear, execution-ready strategy — in a
-                        single day.
-                    </p>
-                    <button className="bg-gold text-primary font-bold px-8 py-3 rounded-lg hover:bg-gold-hover transition-all shadow-lg shadow-gold/10 uppercase text-sm">
-                        Book Your Strategy Session
-                    </button>
+            <section className="px-4 pt-4">
+                <div className="bg-primary py-20 text-center text-white rounded-3xl border border-[#1E293B]">
+                    <div className="max-w-4xl mx-auto px-6">
+                        <div className="text-2xl mb-4 text-gold">⚡</div>
+                        <h1 className="text-4xl font-bold mb-4 uppercase tracking-tight">
+                            The Global Strategy <span className="text-gold underline decoration-gold/30 underline-offset-8">Co-creation Lab</span>
+                        </h1>
+                        <p className="text-gray-200 mb-6 font-medium leading-relaxed">
+                            A focused, expert-led workshop that transforms your global
+                            expansion idea into a clear, execution-ready strategy — in a
+                            single day.
+                        </p>
+                        <button className="bg-gold text-primary font-bold px-8 py-3 rounded-lg hover:bg-gold-hover transition-all shadow-lg shadow-gold/10 uppercase text-sm">
+                            Book Your Strategy Session
+                        </button>
+                    </div>
                 </div>
             </section>
 

@@ -5,14 +5,16 @@ const Alliescape = () => {
         <div className="bg-white text-[#0F172A] min-h-screen">
 
             {/* Header Section */}
-            <section className="bg-gray-50 py-20 text-center">
-                <h1 className="text-4xl font-bold text-gold mb-4 uppercase tracking-tight">
-                    Our Strategic Network (Alliescape)
-                </h1>
-                <p className="max-w-3xl mx-auto text-gray-500 text-lg font-medium leading-relaxed">
-                    Expand & scale with our official allies and strategic partnerships to
-                    guarantee your seamless entry into the UAE market.
-                </p>
+            <section className="px-4 pt-4">
+                <div className="bg-gray-50 py-20 text-center rounded-3xl border border-[#1E293B]">
+                    <h1 className="text-4xl font-bold text-gold mb-4 uppercase tracking-tight">
+                        Our Strategic Network (Alliescape)
+                    </h1>
+                    <p className="max-w-3xl mx-auto text-gray-500 text-lg font-medium leading-relaxed">
+                        Expand & scale with our official allies and strategic partnerships to
+                        guarantee your seamless entry into the UAE market.
+                    </p>
+                </div>
             </section>
 
             {/* Visionary Section */}

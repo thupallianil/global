@@ -151,30 +151,32 @@ const Hero = () => {
 
     return (
         <div className="flex flex-col bg-white overflow-x-hidden">
-            {/* Hero Banner Section */}
-            <section className="relative h-[600px] flex flex-col justify-center items-center text-center px-6 overflow-hidden">
-                <div className="absolute inset-0 z-0">
-                    <img
-                        src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070&auto=format&fit=crop"
-                        alt="UAE Skyline"
-                        className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/75"></div>
-                    <div className="absolute inset-0 opacity-10 pointer-events-none">
-                        <div className="w-full h-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+            {/* Hero Banner Section - Wrapped in rounded container */}
+            <section className="px-4 pt-4">
+                <div className="relative h-[600px] flex flex-col justify-center items-center text-center px-6 overflow-hidden rounded-3xl border border-[#1E293B]">
+                    <div className="absolute inset-0 z-0">
+                        <img
+                            src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070&auto=format&fit=crop"
+                            alt="UAE Skyline"
+                            className="w-full h-full object-cover rounded-3xl"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-b from-[#1a2332]/60 via-[#2a3442]/70 to-[#1a2332]/80 rounded-3xl"></div>
+                        <div className="absolute inset-0 opacity-30 pointer-events-none">
+                            <div className="w-full h-full bg-[linear-gradient(to_right,#ffffff20_1px,transparent_1px),linear-gradient(to_bottom,#ffffff20_1px,transparent_1px)] bg-[size:60px_60px]"></div>
+                        </div>
                     </div>
-                </div>
 
-                <div className="relative z-10 max-w-4xl mx-auto">
-                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 uppercase tracking-tight leading-tight">
-                        To Sell To The World, <br /> Start Your Shop In UAE
-                    </h1>
-                    <p className="text-base md:text-lg text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-                        Your expansion journey — one milestone at a time. <br /> From Local to Global Execution.
-                    </p>
-                    <button className="bg-gold text-[#0F172A] px-8 py-3 rounded-md font-bold text-sm hover:bg-gold-hover transition-all transform hover:scale-105">
-                        Expand with Us
-                    </button>
+                    <div className="relative z-10 max-w-4xl mx-auto">
+                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
+                            To Sell To The World, Start Your Shop In UAE
+                        </h1>
+                        <p className="text-base md:text-lg text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+                            Your expansion journey — one milestone at a time. From Local to Global Execution.
+                        </p>
+                        <button className="bg-gold text-[#0F172A] px-8 py-3 rounded-md font-bold text-sm hover:bg-gold-hover transition-all transform hover:scale-105">
+                            Expand with Us
+                        </button>
+                    </div>
                 </div>
             </section>
 

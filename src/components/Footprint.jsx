@@ -2,15 +2,17 @@ import React from 'react';
 
 const Footprint = () => {
     return (
-        <div className="animate-fadeIn">
+        <div className="animate-fadeIn bg-white">
             {/* Footprint Hero */}
-            <section className="bg-[#0F172A] py-20 px-6 text-center text-white">
-                <div className="max-w-4xl mx-auto">
-                    <svg className="w-10 h-10 text-gold mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" /></svg>
-                    <h1 className="text-4xl font-bold mb-4">ExpandME Global <span className="text-gold">Footprint</span></h1>
-                    <p className="text-gray-300 text-sm leading-relaxed max-w-2xl mx-auto font-medium">
-                        We believe that growth has no boundaries. Our mission is to help Indian startups and businesses seamlessly expand into the UAE and the Middle East.
-                    </p>
+            <section className="px-4 pt-4">
+                <div className="bg-[#0F172A] py-20 px-6 text-center text-white rounded-3xl border border-[#1E293B]">
+                    <div className="max-w-4xl mx-auto">
+                        <svg className="w-10 h-10 text-gold mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" /></svg>
+                        <h1 className="text-4xl font-bold mb-4">ExpandME Global <span className="text-gold">Footprint</span></h1>
+                        <p className="text-gray-300 text-sm leading-relaxed max-w-2xl mx-auto font-medium">
+                            We believe that growth has no boundaries. Our mission is to help Indian startups and businesses seamlessly expand into the UAE and the Middle East.
+                        </p>
+                    </div>
                 </div>
             </section>
 

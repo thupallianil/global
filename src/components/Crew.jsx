@@ -2,14 +2,16 @@ import React from 'react';
 
 const Crew = () => {
     return (
-        <div className="animate-fadeIn">
+        <div className="animate-fadeIn bg-white">
             {/* Crew Hero */}
-            <section className="bg-[#0F172A] py-20 px-6 text-center text-white">
-                <div className="max-w-4xl mx-auto">
-                    <h1 className="text-4xl font-bold mb-6 tracking-tight">ExpandME: Who We Are?</h1>
-                    <p className="text-gray-300 text-sm leading-relaxed max-w-2xl mx-auto font-medium">
-                        ExpandME helps Indian startups expand globally through company setup, 0% Tax, 100% ownership, and setup within 48 hours. We provide full support — legal, operational, and strategic.
-                    </p>
+            <section className="px-4 pt-4">
+                <div className="bg-[#0F172A] py-20 px-6 text-center text-white rounded-3xl border border-[#1E293B]">
+                    <div className="max-w-4xl mx-auto">
+                        <h1 className="text-4xl font-bold mb-6 tracking-tight">ExpandME: Who We Are?</h1>
+                        <p className="text-gray-300 text-sm leading-relaxed max-w-2xl mx-auto font-medium">
+                            ExpandME helps Indian startups expand globally through company setup, 0% Tax, 100% ownership, and setup within 48 hours. We provide full support — legal, operational, and strategic.
+                        </p>
+                    </div>
                 </div>
             </section>
 

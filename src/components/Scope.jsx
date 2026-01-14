@@ -4,22 +4,24 @@ const Scope = () => {
     return (
         <div className="flex flex-col bg-white overflow-x-hidden">
             {/* Scope Hero Section */}
-            <section className="bg-[#0F172A] py-24 px-6 text-center text-white relative">
-                <div className="max-w-4xl mx-auto flex flex-col items-center">
-                    <div className="mb-6">
-                        <svg className="w-10 h-10 text-gold" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M13 10V3L4 14H11V21L20 10H13Z" />
-                        </svg>
+            <section className="px-4 pt-4">
+                <div className="bg-[#0F172A] py-24 px-6 text-center text-white relative rounded-3xl border border-[#1E293B]">
+                    <div className="max-w-4xl mx-auto flex flex-col items-center">
+                        <div className="mb-6">
+                            <svg className="w-10 h-10 text-gold" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13 10V3L4 14H11V21L20 10H13Z" />
+                            </svg>
+                        </div>
+                        <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+                            The Full Scope of <span className="text-white font-black">**ExpandME**</span>
+                        </h1>
+                        <p className="text-gray-400 text-lg mb-10 max-w-3xl leading-relaxed">
+                            Our systematic approach is built on three pillars: <span className="text-white font-bold">**Vision**</span>, <span className="text-white font-bold">**Strategy**</span>, and <span className="text-white font-bold">**Execution**</span>. We cover every step from conceptual alignment to operational launch.
+                        </p>
+                        <button className="bg-gold text-[#0F172A] px-8 py-3 rounded-md font-bold text-sm tracking-wide hover:bg-gold-hover transition-all uppercase">
+                            Start Your Scope Assessment
+                        </button>
                     </div>
-                    <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
-                        The Full Scope of <span className="text-white font-black">**ExpandME**</span>
-                    </h1>
-                    <p className="text-gray-400 text-lg mb-10 max-w-3xl leading-relaxed">
-                        Our systematic approach is built on three pillars: <span className="text-white font-bold">**Vision**</span>, <span className="text-white font-bold">**Strategy**</span>, and <span className="text-white font-bold">**Execution**</span>. We cover every step from conceptual alignment to operational launch.
-                    </p>
-                    <button className="bg-gold text-[#0F172A] px-8 py-3 rounded-md font-bold text-sm tracking-wide hover:bg-gold-hover transition-all uppercase">
-                        Start Your Scope Assessment
-                    </button>
                 </div>
             </section>
 
