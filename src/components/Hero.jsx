@@ -1,4 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useMemo } from 'react';
+import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps';
+import { geoMercator } from 'd3-geo';
 
 const Hero = () => {
     const [verticalIndex, setVerticalIndex] = useState(0);
@@ -6,6 +8,47 @@ const Hero = () => {
 
     const verticalRef = useRef(null);
     const testimonialRef = useRef(null);
+
+    // Map Configuration
+    const width = 800;
+    const height = 450;
+
+    // Create projection
+    const projection = useMemo(() =>
+        geoMercator()
+            .scale(100)
+            .center([0, 25]) // Center slightly north
+            .translate([width / 2, height / 2]),
+        []);
+
+    // Locations
+    const dubai = [55.2708, 25.2048];
+    const destinations = [
+        { name: "London", coordinates: [-0.1278, 51.5074] },
+        { name: "NYC", coordinates: [-74.0060, 40.7128] },
+        { name: "Singapore", coordinates: [103.8198, 1.3521] },
+        { name: "Tokyo", coordinates: [139.6503, 35.6762] },
+        { name: "Sydney", coordinates: [151.2093, -33.8688] },
+        { name: "Mumbai", coordinates: [72.8777, 19.0760] },
+        { name: "Hamburg", coordinates: [9.9937, 53.5511] },
+        { name: "Johannesburg", coordinates: [28.0473, -26.2041] }
+    ];
+
+    // Calculate Curve Paths
+    const generateCurve = (start, end) => {
+        const [x0, y0] = projection(start);
+        const [x1, y1] = projection(end);
+
+        // Calculate curve height based on distance
+        const distance = Math.sqrt(Math.pow(x1 - x0, 2) + Math.pow(y1 - y0, 2));
+        const curveHeight = distance * 0.2; // Adjust curve intensity
+
+        // Midpoint with offset
+        const midX = (x0 + x1) / 2;
+        const midY = (y0 + y1) / 2 - curveHeight;
+
+        return `M${x0},${y0} Q${midX},${midY} ${x1},${y1}`;
+    };
 
     const verticals = [
         {
@@ -77,6 +120,19 @@ const Hero = () => {
             quote: '"Navigating international regulations can be daunting, but ExpandME made it seamless. A trusted partner for any business looking to grow."',
             avatar: 'https://randomuser.me/api/portraits/men/75.jpg'
         }
+    ];
+
+    // Globe Data
+    const N = 20;
+    const arcsData = [
+        { startLat: 25.2048, startLng: 55.2708, endLat: 51.5074, endLng: -0.1278, label: 'Dubai -> London' }, // Dubai to London
+        { startLat: 25.2048, startLng: 55.2708, endLat: 40.7128, endLng: -74.0060, label: 'Dubai -> NYC' },   // Dubai to NYC
+        { startLat: 25.2048, startLng: 55.2708, endLat: 1.3521, endLng: 103.8198, label: 'Dubai -> Singapore' }, // Dubai to Singapore
+        { startLat: 25.2048, startLng: 55.2708, endLat: 35.6762, endLng: 139.6503, label: 'Dubai -> Tokyo' }, // Dubai to Tokyo
+        { startLat: 25.2048, startLng: 55.2708, endLat: -33.8688, endLng: 151.2093, label: 'Dubai -> Sydney' }, // Dubai to Sydney
+        { startLat: 25.2048, startLng: 55.2708, endLat: 19.0760, endLng: 72.8777, label: 'Dubai -> Mumbai' }, // Dubai to Mumbai
+        { startLat: 25.2048, startLng: 55.2708, endLat: 55.7558, endLng: 37.6173, label: 'Dubai -> Moscow' }, // Dubai to Moscow
+        { startLat: 25.2048, startLng: 55.2708, endLat: -26.2041, endLng: 28.0473, label: 'Dubai -> Johannesburg' } // Dubai to South Africa
     ];
 
     const handleScroll = (ref, setIndex, cardWidth) => {
@@ -262,35 +318,94 @@ const Hero = () => {
                 </div>
             </section>
 
-            {/* Strategic Presence Section WITH ANIMATED GLOBE */}
+            {/* Strategic Presence Section WITH FLAT TECH MAP */}
             <section className="bg-white py-24 px-6 text-center">
-                <div className="max-w-4xl mx-auto">
-                    <h2 className="text-4xl font-extrabold text-[#0F172A] mb-16 tracking-tight">
-                        Strategic Presence Across the UAE
+                <div className="max-w-6xl mx-auto">
+                    <h2 className="text-4xl font-extrabold text-[#0F172A] mb-8 tracking-tight">
+                        Strategic Presence Across the UAE & Globe
                     </h2>
-                    <div className="relative w-full max-w-2xl mx-auto h-[450px] bg-black rounded-3xl overflow-hidden shadow-2xl flex items-center justify-center p-12">
-                        <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,#1B2735_0%,#090A0F_100%)]">
-                            <div className="absolute inset-0 opacity-30 animate-pulse bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
-                        </div>
-                        <div className="relative z-10 w-64 h-64 md:w-80 md:h-80 rounded-full shadow-[0_0_60px_rgba(30,58,138,0.5)] overflow-hidden border-2 border-white/10 group">
-                            <div className="absolute inset-0 z-20 shadow-[inset_0_0_50px_rgba(0,0,0,0.8)] rounded-full"></div>
-                            <div className="absolute inset-0 z-10 animate-spin-slow flex items-center">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/World-map-2004-centered-on-pacific.jpg" alt="Animating Globe Map" className="h-full w-[200%] max-w-none opacity-60 mix-blend-screen scale-150" />
+                    <p className="text-gray-500 text-base mb-12 max-w-2xl mx-auto">
+                        Explore our global connections. Navigate the map to see how we bridge the UAE with key international markets.
+                    </p>
+
+                    <div className="relative w-full h-[500px] rounded-3xl overflow-hidden shadow-2xl bg-[#090A0F] border-4 border-[#1B2735]">
+                        <ComposableMap projection={projection} width={width} height={height} style={{ width: "100%", height: "100%" }}>
+                            {/* Dark Base Map */}
+                            <Geographies geography="https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json">
+                                {({ geographies }) =>
+                                    geographies.map((geo) => (
+                                        <Geography
+                                            key={geo.rsmKey}
+                                            geography={geo}
+                                            fill="#1B2735"
+                                            stroke="#2C3E50"
+                                            strokeWidth={0.5}
+                                            style={{
+                                                default: { outline: "none" },
+                                                hover: { fill: "#243447", outline: "none" },
+                                                pressed: { outline: "none" }
+                                            }}
+                                        />
+                                    ))
+                                }
+                            </Geographies>
+
+                            {/* Animated Arcs */}
+                            {destinations.map((dest, i) => (
+                                <g key={i}>
+                                    <path
+                                        d={generateCurve(dubai, dest.coordinates)}
+                                        fill="none"
+                                        stroke="#D4AF37"
+                                        strokeWidth="1.5"
+                                        strokeLinecap="round"
+                                        strokeDasharray="5,5"
+                                        className="animate-flow"
+                                        style={{ animationDelay: `${i * 0.5}s` }}
+                                    />
+                                    {/* Destination Marker */}
+                                    <Marker coordinates={dest.coordinates}>
+                                        <circle r={3} fill="#D4AF37" />
+                                        <text
+                                            textAnchor="middle"
+                                            y={-10}
+                                            style={{ fontFamily: "system-ui", fill: "#94a3b8", fontSize: "8px", fontWeight: "bold" }}
+                                        >
+                                            {dest.name}
+                                        </text>
+                                    </Marker>
+                                </g>
+                            ))}
+
+                            {/* UAE Hub Marker */}
+                            <Marker coordinates={dubai}>
+                                <circle r={6} fill="#D4AF37" className="animate-ping opacity-75" />
+                                <circle r={4} fill="#D4AF37" />
+                                <text
+                                    textAnchor="middle"
+                                    y={-15}
+                                    style={{ fontFamily: "system-ui", fill: "#D4AF37", fontSize: "10px", fontWeight: "900", textShadow: "0 0 5px black" }}
+                                >
+                                    UAE
+                                </text>
+                            </Marker>
+                        </ComposableMap>
+
+                        <div className="absolute top-6 right-6 bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20 text-left">
+                            <h4 className="text-gold font-bold text-sm mb-2">LIVE CONNECTIONS</h4>
+                            <div className="flex flex-col gap-2">
+                                <div className="flex items-center gap-2 text-xs text-white">
+                                    <div className="w-2 h-2 rounded-full bg-gold animate-pulse"></div>
+                                    <span>UAE Hub Active</span>
+                                </div>
+                                <div className="flex items-center gap-2 text-xs text-blue-300">
+                                    <div className="w-2 h-2 rounded-full bg-blue-400"></div>
+                                    <span>Global Nodes</span>
+                                </div>
                             </div>
-                            <div className="absolute inset-0 z-30 bg-gradient-to-tr from-blue-500/20 via-transparent to-white/10 rounded-full"></div>
-                            <div className="absolute top-[28%] left-[32%] flex flex-col items-center z-50 animate-bounce">
-                                <div className="bg-gold text-[#0F172A] text-[8px] font-bold px-1 rounded-sm mb-1 leading-none">HAMBURG</div>
-                                <div className="w-2 h-2 bg-gold rounded-full shadow-[0_0_10px_var(--accent)]"></div>
-                            </div>
-                            <div className="absolute top-[45%] left-[72%] w-3 h-3 bg-gold rounded-full z-40 animate-ping"></div>
-                            <div className="absolute top-[45%] left-[72%] w-2 h-2 bg-gold rounded-full z-50"></div>
-                        </div>
-                        <div className="absolute inset-0 z-20 opacity-30 pointer-events-none">
-                            <svg className="w-full h-full" viewBox="0 0 100 100">
-                                <path d="M32 28 Q 50 20 72 45" className="stroke-gold/50" fill="none" strokeWidth="0.5" strokeDasharray="5,5" />
-                            </svg>
                         </div>
                     </div>
+
                     <p className="mt-12 text-gray-500 text-sm font-medium leading-relaxed max-w-2xl mx-auto italic border-t border-gray-100 pt-8">
                         "We guide your business expansion to key economic zones in Dubai, Ras Al Khaimah, and Sharjah, ensuring optimal market reach."
                     </p>
@@ -298,8 +413,12 @@ const Hero = () => {
             </section>
 
             <style>{`
-        @keyframes spin-slow { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-        .animate-spin-slow { animation: spin-slow 25s linear infinite; }
+        @keyframes flow {
+            to { stroke-dashoffset: -20; }
+        }
+        .animate-flow {
+            animation: flow 1s linear infinite;
+        }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
       `}</style>
