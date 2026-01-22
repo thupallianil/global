@@ -2,46 +2,14 @@
 
 @theme {
     --color-primary: #0F172A;
-    --color-gold: rgb(var(--accent-rgb));
-    --color-gold-hover: rgb(var(--accent-hover-rgb));
-    --color-accent: rgb(var(--accent-rgb));
-    --color-accent-hover: rgb(var(--accent-hover-rgb));
+    --color-gold: #D4AF37;
+    --color-gold-hover: #C9A227;
+    --color-accent: #D4AF37;
+    --color-accent-hover: #C9A227;
 }
 
 :root {
     font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
-    --accent-rgb: 212 175 55;
-    --accent-hover-rgb: 201 162 39;
-    --accent-light: #D4AF3720;
-}
-
-/* Theme: Luxe Gold (Default) */
-[data-theme="gold"],
-:root {
-    --accent-rgb: 212 175 55;
-    --accent-hover-rgb: 201 162 39;
-    --accent-light: #D4AF3720;
-}
-
-/* Theme: Midnight Blue */
-[data-theme="midnight"] {
-    --accent-rgb: 30 64 175;
-    --accent-hover-rgb: 30 58 138;
-    --accent-light: #3B82F620;
-}
-
-/* Theme: Emerald */
-[data-theme="emerald"] {
-    --accent-rgb: 5 150 105;
-    --accent-hover-rgb: 4 120 87;
-    --accent-light: #10B98120;
-}
-
-/* Theme: Ruby Red */
-[data-theme="ruby"] {
-    --accent-rgb: 220 38 38;
-    --accent-hover-rgb: 185 28 28;
-    --accent-light: #EF444420;
 }
 
 body {
@@ -52,32 +20,32 @@ body {
     color: white;
 }
 
-/* Accent color utilities that respond to theme */
+/* Accent color utilities */
 .text-accent {
-    color: rgb(var(--accent-rgb)) !important;
+    color: #D4AF37 !important;
 }
 
 .bg-accent {
-    background-color: rgb(var(--accent-rgb)) !important;
+    background-color: #D4AF37 !important;
 }
 
 .bg-accent-hover:hover {
-    background-color: rgb(var(--accent-hover-rgb)) !important;
+    background-color: #C9A227 !important;
 }
 
 .border-accent {
-    border-color: rgb(var(--accent-rgb)) !important;
+    border-color: #D4AF37 !important;
 }
 
 .shadow-accent {
-    box-shadow: 0 10px 15px -3px var(--accent-light) !important;
+    box-shadow: 0 10px 15px -3px rgba(212, 175, 55, 0.125) !important;
 }
 
 .decoration-accent {
-    text-decoration-color: rgb(var(--accent-rgb)) !important;
+    text-decoration-color: #D4AF37 !important;
 }
 
 /* Ring utilities */
 .ring-accent {
-    --tw-ring-color: rgb(var(--accent-rgb)) !important;
+    --tw-ring-color: #D4AF37 !important;
 }

@@ -8,10 +8,10 @@ module.exports = {
         extend: {
             colors: {
                 primary: '#0F172A',
-                gold: 'rgb(var(--accent-rgb) / <alpha-value>)',
-                'gold-hover': 'rgb(var(--accent-hover-rgb) / <alpha-value>)',
-                accent: 'rgb(var(--accent-rgb) / <alpha-value>)',
-                'accent-hover': 'rgb(var(--accent-hover-rgb) / <alpha-value>)',
+                gold: '#D4AF37',
+                'gold-hover': '#C9A227',
+                accent: '#D4AF37',
+                'accent-hover': '#C9A227',
             },
             fontFamily: {
                 sans: ['Inter', 'system-ui', 'Avenir', 'Helvetica', 'Arial', 'sans-serif'],

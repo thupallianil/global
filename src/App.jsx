@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
+import Header from './Header';
+import Hero from './Hero';
 import Scope from './components/Scope';
-import Essence from './components/Essence';
-import Crew from './components/Crew';
-import Blueprint from './components/Blueprint';
+import Essence from './pages/Essence';
+import Crew from './pages/Crew';
+import Blueprint from './pages/Blueprint';
 import Footprint from './components/Footprint';
 import Synergy from './components/Synergy';
-import Alliescape from './components/Alliescape';
-import ImpactTales from './components/ImpactTales';
-import CoCreate from './components/CoCreate';
-import Echoes from './components/Echoes';
+import Alliescape from './pages/Alliescape';
+import ImpactTales from './pages/ImpactTales';
+import CoCreate from './pages/CoCreate';
+import Echoes from './pages/Echoes';
 import Momentum from './components/Momentum';
-import Chronos from './components/Chronos';
-import Spotlight from './components/Spotlight';
-import Wavelength from './components/Wavelength';
-import PulseStream from './components/PulseStream';
+import Chronos from './pages/Chronos';
+import Spotlight from './pages/Spotlight';
+import Wavelength from './pages/Wavelength';
+import PulseStream from './pages/PulseStream';
 import ExpansionRequest from './components/ExpansionRequest';
-import Footer from './components/Footer';
+import Footer from './Footer';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
